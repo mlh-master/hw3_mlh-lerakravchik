@@ -119,7 +119,7 @@ for $\mu \in set[x_1,x_n]$ we get:
 $$
 \displaystyle \sum_{i=1}^{n}\vert x_i - \mu \vert = \sum_{i=2}^{n-1}\vert x_i - \mu \vert + \vert x_1 - \mu \vert + \vert x_n - \mu \vert = 
 $$$$
-\displaystyle = \sum_{i=2}^{n-1}\vert x_i - \mu \vert + (\mu - x_1) + (x_n - \mu) = \sum_{i=2}^{n-1}\vert x_i - \mu \vert + (x_n = x_1)
+\displaystyle = \sum_{i=2}^{n-1}\vert x_i - \mu \vert + (\mu - x_1) + (x_n - \mu) = \sum_{i=2}^{n-1}\vert x_i - \mu \vert + (x_n - x_1)
 $$
 with the same argument applied to all the series we got:
 $$
@@ -147,9 +147,15 @@ for picture F the answer is 4\\
 %-----------------------------------------------------------------------------------------------------------------
 \newpage
 \begin{center}
-	\textbf{Q2 - Capability of generalization}
+	\textbf{Q3 - Capability of generalization}
 \end{center}
+\begin{enumerate}[label=(\alph*)]
+\item The term is generalization. We do not want to get very simple model that means underfitting, and we do not want to get very complex model which means overfitting. 
+\item According to AIC criterion if we have large P we wiil get an optimal likelihood and the AIC will be large, which is not good and we are talking about an overfitting. If the P is low we wiil have really low likelihood. So the AIC again will be large because of $-\ln$ which is not good and we will get underfitting.
+\item As i said before it will bring us to overfitting or underfitting.
+\item As I said before the AIC should be low because in all extreme cases like overfitting and underfitting the AIC will be high.
 
+\end{enumerate}
 %-----------------------------------------------------------------------------------------------------------------
 \newpage
 \bibliographystyle{IEEEtran}
