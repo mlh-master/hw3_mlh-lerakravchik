@@ -133,7 +133,7 @@ z gets to the minimum, where $z'=0$ and $z''>0$.  z is minimized when $\mu = x_{
 	\textbf{Q2 - SVM}
 \end{center}
 
-Linear kernel means that in the graph we wiil get the line. Parameter C tells to the SVM optimizer how much you want to avoid missclassifying in the training set. For large values C, the optimization will choose a smaller-margin hyperplane. Accordingly the small values of C the optimization will chouse the bigger margin. For tiny C you will get missclassified examples, even if you data linear separable.\\
+Linear kernel means that in the graph we will get the line. Parameter C tells to the SVM optimizer how much you want to avoid missclassifying in the training set. For large values C, the optimization will choose a smaller-margin hyperplane. Accordingly the small values of C the optimization will chouse the bigger margin. For tiny C you will get missclassified examples, even if you data linear separable.\\
  Polinomial kernel in general defined as: $K(X_1,X_2) = (a+X_1^T X_2)^b$. b - is the degree of the kernel, a is a constant term \cite{svm}. In the polynomial kernel we simply calculate the dot product by increasing the power of the kernel. With large b the separable line will look very complex.\\
 RBF kernel is function whose value depends on the distance from the origin or from some point. The $\gamma$ parameter influence on the optimization as fitting optimizer. That means that if value of $\gamma$  increases, the model gets overfits, as the value of $\gamma$  decreases the model underfits, and the same is true about the C parameter for RBF kernel.
 
@@ -151,9 +151,9 @@ for picture F the answer is 4\\
 \end{center}
 \begin{enumerate}[label=(\alph*)]
 \item The term is generalization. We do not want to get very simple model that means underfitting, and we do not want to get very complex model which means overfitting. 
-\item According to AIC criterion if we have large P we wiil get an optimal likelihood and the AIC will be large, which is not good and we are talking about an overfitting. If the P is low we wiil have really low likelihood. So the AIC again will be large because of $-\ln$ which is not good and we will get underfitting.
-\item As i said before it will bring us to overfitting or underfitting.
-\item As I said before the AIC should be low because in all extreme cases like overfitting and underfitting the AIC will be high.
+\item According to AIC criterion if we have large P we will get an optimal likelihood (because our fitting was good, large number of parameters defines a better fitting of the model) and the AIC will be large, which is not good and we are talking about an overfitting. If the P is low we will have really low likelihood. So the AIC again will be large because of $-\ln$ which is not good and we will get underfitting.
+\item As I said before it will bring us to overfitting or underfitting.
+\item As I said before the AIC should be low because in all extreme cases like overfitting and underfitting the AIC will be high. Thus, the challenge is to select the model with the minimum parameters that explain the largest error variance\cite{AIC}.
 
 \end{enumerate}
 %-----------------------------------------------------------------------------------------------------------------

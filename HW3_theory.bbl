@@ -49,4 +49,11 @@ L.~Kaufman and P.~J. Rousseeuw, Eds., \emph{{Finding Groups in Data}}, ser.
   \url{https://towardsdatascience.com/support-vector-machines-svm-c9ef22815589}
 \BIBentrySTDinterwordspacing
 
+\bibitem{AIC}
+\BIBentryALTinterwordspacing
+``{Akaike Information Criterion - an overview | ScienceDirect Topics}.''
+  [Online]. Available:
+  \url{https://www.sciencedirect.com/topics/medicine-and-dentistry/akaike-information-criterion}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
