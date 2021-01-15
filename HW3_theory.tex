@@ -125,7 +125,24 @@ with the same argument applied to all the series we got:
 $$
 \displaystyle z = \sum_{i=1}^{n}\vert x_i - \mu \vert = \vert x_{\frac{n+1}{2}} - \mu \vert + \vert x_n - x_1 \vert + \dots + \vert x_{\frac{n+3}{2}} - x_{\frac{n-1}{2}} \vert= \vert  x_{\frac{n+1}{2}} - \mu \vert + const
 $$
-z gets to the minimum, where $z'=0$ and $z''>0$.  z is minimized when $\mu = x_{\frac{n+1}{2}}$(median), hence median of $median = argmin_{\mu}\sum_i \vert x_i - \mu \vert$
+z gets to the minimum, where $z'=0$ and $z''>0$.  z is minimized when $\mu = x_{\frac{n+1}{2}}$(median), hence median of $median = argmin_{\mu}\sum_i \vert x_i - \mu \vert$\\
+Pay attention that this is correct just for odd number of samples. If it is even, so we will get reduction of all the term $z$ above and the answer will be 0. And argmin also will be 0. It is not correct and we need to calculate it by different way:\\
+I will use the similar indentity like for odd numbers, but right now it will be a little bit different: 
+$$
+\displaystyle z = \sum_{i=1}^{n}\vert x_i - \mu \vert = \vert x_1 - \mu \vert + \vert x_2 - \mu \vert + \dots + \vert x_{\frac{n}{2}} - \mu \vert+ \vert  x_{\frac{n}{2}+1} - \mu \vert + \dots +\vert x_{n-1} - \mu \vert + \vert x_n - \mu \vert
+$$
+$\Longrightarrow $ when $n$ is even, so any number in the interval $\left[ x_{\frac{n}{2}}, x_{\frac{n}{2}+1} \right]$, i.e. including the median, minimized the sum of absolute values of the deviations. Let me explain it by example. Consider the series: 0,1,2,3,17,20, median $M = 2.5$:
+$$
+\displaystyle \sum_{i=1}^{6} \vert x_i - M \vert =2.5 + 1.5 + 0.5 + 0.5 + 14.5 + 17.5= 37
+$$
+If you take any value in the interval $\left[ x_{\frac{n}{2}}, x_{\frac{n}{2}+1} \right] = [2,3]$, for instance 2.1
+$$
+\displaystyle \sum_{i=1}^{6} \vert x_i - 2.1 \vert =2.1 + 1.1 + 0.1 + 0.9 + 14.9 + 17.9= 37
+$$
+For any value outside this interval $\left[ x_{\frac{n}{2}}, x_{\frac{n}{2}+1} \right] = [2,3]$, for instance 6:
+$$
+\displaystyle \sum_{i=1}^{6} \vert x_i - 2.1 \vert =6 + 5 + 4 + 3 + 11 + 13= 42
+$$
 \end{enumerate}
 %-----------------------------------------------------------------------------------------------------------------
 \newpage
@@ -138,12 +155,16 @@ Linear kernel means that in the graph we will get the line. Parameter C tells to
 RBF kernel is function whose value depends on the distance from the origin or from some point. The $\gamma$ parameter influence on the optimization as fitting optimizer. That means that if value of $\gamma$  increases, the model gets overfits, as the value of $\gamma$  decreases the model underfits, and the same is true about the C parameter for RBF kernel.
 
 From this explanations I can conclude, that:\\
-for picture A the answer is 2\\
+for picture A the answer is 1\\
 for picture B the answer is 6\\
 for picture C the answer is 3\\
-for picture D the answer is 1\\
+for picture D the answer is 2\\
 for picture E the answer is 5\\
 for picture F the answer is 4\\
+
+More accurate explanation about linear kernel an its C:\\
+
+From the picture A we can conclude that pink dots are situated very close to the separation line, but at the same moment the blue ones situated a bit far from this line, so we can conclude that the margin is absolutely high and this pink dotes situated between 2 support vectors, and not outside the margin zone, because this zone defined by external blue and pink dots whic situated far away from a separation line. Small C (a lot of regularization) limits the influence of individual points, exactly this thing we can see at picture A. At the same moment less regularization (C high) show us that the margin is shorter and all dots are situated outside the margin.
 %-----------------------------------------------------------------------------------------------------------------
 \newpage
 \begin{center}
