@@ -164,7 +164,13 @@ for picture F the answer is 4\\
 
 More accurate explanation about linear kernel an its C:\\
 
-From the picture A we can conclude that pink dots are situated very close to the separation line, but at the same moment the blue ones situated a bit far from this line, so we can conclude that the margin is absolutely high and this pink dotes situated between 2 support vectors, and not outside the margin zone, because this zone defined by external blue and pink dots whic situated far away from a separation line. Small C (a lot of regularization) limits the influence of individual points, exactly this thing we can see at picture A. At the same moment less regularization (C high) show us that the margin is shorter and all dots are situated outside the margin.
+From the picture A we can conclude that pink dots are situated very close to the separation line, but at the same moment the blue ones situated a bit far from this line, so we can conclude that the margin is absolutely high and this pink dotes situated between 2 support vectors, and not outside the margin zone, because this zone defined by external blue and pink dots whic situated far away from a separation line. Small C (a lot of regularization) limits the influence of individual points, exactly this thing we can see at picture A. At the same moment less regularization (C high) show us that the margin is shorter and all dots are situated outside the margin.\\
+We can see it, if we visualize the iris dataset from scikit-learn (Figure \ref{ris:K2}):
+\begin{figure}[h]
+	\center{\includegraphics[scale =1]{K2}}
+	\caption{C=1 vs C=0.01}
+	\label{ris:K2}
+\end{figure}
 %-----------------------------------------------------------------------------------------------------------------
 \newpage
 \begin{center}
